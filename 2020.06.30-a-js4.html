@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>葡萄藤PPT</title>
+
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/reveal.css">
+
+    <!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/theme/ptt.css">
+
+    <!-- syntax highlighting 代码高亮主题 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/lib/reveal/css/zenburn.css">
+
+    <!-- 打印和PDF输出样式 -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            'https://ptteng.github.io/PPT/css/reveal/print/pdf.css' : '../css/reveal/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<img src="https://ptteng.github.io/PPT/img/demo/logo.png" alt="" usemap="#pttmap" class="base-logo">
+<map name="pttmap">
+    <area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com" alt="" target="_blank"/>
+</map>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>简述JS中this的指向</h2>
+            <p></p>
+        </section>
+        <section>
+            <p>1.背景介绍</p>
+            <p>2.知识剖析</p>
+            <p>3.常见问题</p>
+            <p>4.解决方案</p>
+            <p>5.扩展思考</p>
+            <p>6.编码实战</p>
+            <p>7.参考文献</p>
+            <p>8.更多讨论</p>
+        </section>
+        <section>
+            <h3>1.背景介绍</h3>
+        </section>
+        <section>
+            <p>this关键字
+            </p>
+            <p>
+                解析器在调用函数每次都会向函数内部传递进一个隐含的参数，就是this
+
+                this是JavaScript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。
+
+            </p>
+
+
+        </section>
+
+        <section>
+            <p>
+
+                this的指向在函数定义的时候是确定不了的，只有在函数执行的时候才能确定, 因为this是执行上下文环境的一部分，而执行上下文需要在代码执行之前确定，而不是定义的时候。
+
+                随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是“this指的是调用函数的那个对象"。
+            </p>
+        </section>
+        <section>
+            <h3>2.知识剖析</h3>
+        </section>
+
+        <section>
+
+            <p>常用</p>
+            <p>
+                1,普通函数调用
+            </p>
+            <p>
+                2,对象函数调用
+            </p>
+            <p>
+                3.构造函数中this
+            </p>
+
+            <p>
+                4.箭头函数中
+            </p>
+        </section>
+
+
+        <section>
+            <h3>3.常见问题</h3>
+            <p>如何改变this指向？</p>
+
+        </section>
+
+
+        <section>
+            <h3>4.解决方案</h3>
+            <p>
+                1.call方法和apply方法
+            </p>
+
+            <p>
+                2.通过new
+            </p>
+
+        </section>
+
+
+        <section>
+            <h3>5.扩展思考</h3>
+            <p>
+                箭头函数中this指向？
+            </p>
+            <p>
+                直接使用箭头函数的this指向调用它的对象。
+
+                箭头函数的this向外层作用域中，一层层查找this，直到有this定义。
+
+                箭头函数没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。
+            </p>
+        </section>
+
+        <section>
+            <h3>6.编码实战</h3>
+        </section>
+
+        <section>
+            <h3>7.参考文献</h3>
+            <p>
+                参考一：https://juejin.im/post/5b330069f265da598223dfba
+            </p>
+            <p>
+                参考二：https://www.cnblogs.com/pssp/p/5216085.html
+            </p>
+
+        </section>
+        <section>
+            <h3>8.更多讨论</h3>
+            <p>
+                call和apply方法区别
+            </p>
+            <p>
+                call 和 apply 两个主要用途就是
+            </p>
+            <p>
+                1.改变 this 的指向（把 this 从 obj2 指向到 obj1 ）
+            </p>
+            <p>
+                2.方法借用（ obj1 没有 fn ，只是借用 obj2 方法）
+            </p>
+        </section>
+
+        <section>
+            <p>
+                相同点：这两个方法的作用是一样的。都是在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域。
+            </p>
+            <p>
+                call 的参数是直接放进去的，第二第三第 n 个参数全都用逗号分隔，直接放到后面。
+            </p>
+            <p>
+                apply 的所有参数都必须放在一个数组里面传进去
+            </p>
+        </section>
+
+        <!--        <section>-->
+        <!--            <p>-->
+        <!--                1.Get方法有长度限制?-->
+        <!--            </p>-->
+        <!--            <p>-->
+        <!--                浏览器地址栏输入的参数是有限的。HTTP协议没有body和url的长度限制，对url限制的大多是浏览器和服务器的原因。-->
+
+        <!--                服务器是因为处理长url要消耗比较多的资源，为了性能和安全（防止恶意构造长url来攻击）考虑，会给url长度加限制。-->
+        <!--            </p>-->
+        <!--        </section>-->
+        <section>
+            <h4>结束语</h4>
+            <p>今天的分享就到这里啦，感谢大家观看</p>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://ptteng.github.io/PPT/lib/reveal/js/head.min.js"></script>
+<script src="https://ptteng.github.io/PPT/lib/reveal/reveal.js"></script>
+
+<script>
+    // 以下为常见配置属性的默认值
+    // {
+    // controls: true, // 是否在右下角展示控制条
+    // progress: true, // 是否显示演示的进度条
+    // slideNumber: false, // 是否显示当前幻灯片的页数编号，也可以使用代码slideNumber: 'c / t' ，表示当前页/总页数。
+    // history: false, // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+    // keyboard: true, // 是否启用键盘快捷键来导航
+    // overview: true, // 是否启用幻灯片的概览模式，可使用"Esc"或"o"键来切换概览模式
+    // center: true, // 是否将幻灯片垂直居中
+    // touch: true, // 是否在触屏设备上启用触摸滑动切换
+    // loop: false, // 是否循环演示
+    // rtl: false, // 是否将演示的方向变成RTL，即从右往左
+    // fragments: true, // 全局开启和关闭碎片。
+    // autoSlide: 0, // 两个幻灯片之间自动切换的时间间隔（毫秒），当设置成 0 的时候则禁止自动切换，该值可以被幻灯片上的 ` data-autoslide` 属性覆盖
+    // transition: 'default', // 切换过渡效果，有none/fade/slide/convex/concave/zoom
+    // transitionSpeed: 'default', // 过渡速度，default/fast/slow
+    // mouseWheel: true, //是否启用通过鼠标滚轮来切换幻灯片
+    // }
+    // 初始化幻灯片
+    Reveal.initialize({
+        history: true,
+        dependencies: [
+            {src: 'https://ptteng.github.io/PPT/plugin/markdown/marked.js'},
+            {src: 'https://ptteng.github.io/PPT/plugin/markdown/markdown.js'},
+            {src: 'https://ptteng.github.io/PPT/plugin/notes/notes.js', async: true},
+            {
+                src: 'https://ptteng.github.io/PPT/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
