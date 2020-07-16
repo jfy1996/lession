@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>葡萄藤PPT</title>
+
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/reveal.css">
+
+    <!-- PPT主题，可以在/css/reveal/theme/中选择其他主题，目前暂时只能使用该模板 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/css/reveal/theme/ptt.css">
+
+    <!-- syntax highlighting 代码高亮主题 -->
+    <link rel="stylesheet" href="https://ptteng.github.io/PPT/lib/reveal/css/zenburn.css">
+
+    <!-- 打印和PDF输出样式 -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            'https://ptteng.github.io/PPT/css/reveal/print/pdf.css' : '../css/reveal/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<img src="https://ptteng.github.io/PPT/img/demo/logo.png" alt="" usemap="#pttmap" class="base-logo">
+<map name="pttmap">
+    <area shape="rect" coords="0,0,276,58" href="http://www.jnshu.com" alt="" target="_blank"/>
+</map>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>常见的DOM操作有哪些</h2>
+            <p></p>
+        </section>
+        <section>
+            <p>1.背景介绍</p>
+            <p>2.知识剖析</p>
+            <p>3.常见问题</p>
+            <p>4.解决方案</p>
+            <p>5.扩展思考</p>
+            <p>6.编码实战</p>
+            <p>7.参考文献</p>
+            <p>8.更多讨论</p>
+        </section>
+        <section>
+            <h3>1.背景介绍</h3>
+        </section>
+        <section>
+            <p>DOM
+            </p>
+            <p>
+                DOM是一套对文档的内容进行抽象和概念化的方法
+
+                DOM的定义则是由W3C所制定的标准，定义为"一个与系统平台和编程语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容、结构和样式。
+
+            </p>
+
+
+        </section>
+
+        <section>
+            <p>
+
+                DOM是针对于HTML和XML文档的一个API（应用程序编程接口）。
+                是W3C组织推荐的处理可扩展标志语言的标准编程接口。
+                在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。
+                当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+                在DOM中，可以将任何HTML或者XML的文档描绘成一个由多层节点构成的结构
+            </p>
+        </section>
+        <section>
+            <h3>2.知识剖析</h3>
+        </section>
+
+        <section>
+
+            <p>什么是DOM</p>
+            <p>
+                当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
+
+                通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML。
+            </p>
+            <p>
+                JavaScript 能够改变页面中的所有 HTML 元素
+            </p>
+            <p>
+                JavaScript 能够改变页面中的所有 HTML 属性
+            </p>
+            <p>
+                JavaScript 能够改变页面中的所有 CSS 样式
+            </p>
+            <p>
+                JavaScript 能够对页面中的所有事件做出反应
+            </p>
+
+            <p>
+                查找 HTML 元素，
+
+                ，通过 id 找到 HTML 元素
+
+                ，通过标签名找到 HTML 元素
+
+                ，通过类名找到 HTML 元素
+            </p>
+        </section>
+
+        <section>
+
+            <p>节点</p>
+            <p>
+                文档是由节点构成的集合，只不过此时的节点是文档树上的树枝和树叶而已
+            </p>
+            <p>
+                元素节点
+            </p>
+            <p>
+                DOM中的原子就是元素节点。
+
+                我们在编写时，会用到诸如body、head、p这些元素。如果把Web上的文档比作一座大厦，那么元素就是建造这座大厦的砖块，这些元素在在文档中的布局形成了文档的结构。元素可以包含其他的元素，在我们所看到的页面页中，内容都被包含在在一个section元素的内部。而唯一没有被包含在其他元素中的唯一元素是html，他和我们的节点树的根元素，其他的所有元素都被包含在html中。
+            </p>
+        </section>
+
+        <section>
+
+            <p>属性节点</p>
+            <p>
+                属性节点用来对元素做出更具体的描述。例如，几乎所有的元素都有一个title属性，而我们可以利用这个属性对包含在元素里的东西做出准确的描述：p title="a gentle
+                reminder这是一个带有温馨提示的p标签
+
+                ​ 在DOM中，title="a gentle reminder"是一个属性节点。因为属性总是被放在起始标签里，所以属性节点总是被包含在元素节点中。并非所有的标签都包含着属性，但是所有的属性都被元素包含。
+            </p>
+
+        </section>
+
+        <section>
+            <h3>3.常见问题</h3>
+            <p>如何获取dom？</p>
+
+        </section>
+
+
+        <section>
+            <h3>4.解决方案</h3>
+            <p>
+                通过使用 getElementById() 方法匹配元素的id属性来访问元素节点，对元素节点进行操作
+            </p>
+
+            <p>
+                通过使用 getElementsByTagName() 方法匹配元素的tagName来访问元素节点，对元素节点进行操作
+            </p>
+            <p>
+                通过使用 getElementsByClassName() 方法匹配元素的className来访问元素节点，对元素节点进行操作
+            </p>
+            <p>
+                值得注意的是， getElementsByTagName() 和 getElementsByClassName()
+                这两种方法因为其访问的是节点中的可能为复数的属性，所以得到的会是一个以数组的形式来体现出来的元素节点集合，我们可以通过打印获取到的DOM节点来判断类型
+            </p>
+
+        </section>
+
+
+        <section>
+            <h3>5.扩展思考</h3>
+            <p>
+                DOM事件
+            </p>
+            <p>
+                onclick事件---当用户点击时执行；
+            </p>
+            <p>
+                ​ onload事件---当用户进入时执行；
+            </p>
+            <p>
+                ​ onunload事件---当用户离开时执行；
+            </p>
+            <p>
+                ​ onmouseover事件---当用户鼠标指针移入时执行；
+            </p>
+            <p>
+                ​ onmouseout事件---当用户鼠标指针移出时执行；
+            </p>
+            <p>
+                ​ onmousedown事件---当用户鼠标摁下时执行；
+            </p>
+            <p>
+                ​ onmouseup事件---当用户鼠标松开时执行
+            </p>
+        </section>
+
+        <section>
+            <h3>6.编码实战</h3>
+        </section>
+
+        <section>
+            <h3>7.参考文献</h3>
+            <p>
+                参考一：https://www.w3school.com.cn/htmldom/index.asp
+            </p>
+            <p>
+                参考二：https://www.runoob.com/jsref/dom-obj-event.html
+            </p>
+
+        </section>
+        <section>
+            <h3>8.更多讨论</h3>
+            <p>
+                常用的修改DOM的方法
+            </p>
+            <p>
+                插入节点
+            </p>
+            <p>
+                parent.appendChild( element/txt/comment/fragment );向父节点的最后一个子节点后追加新节点
+            </p>
+            ​ parent.insertBefore( newChild, existingChild );向父节点的某个特定子节点之前插入新节点
+            <p>
+                ​ element.setAttributeNode( attributeName );给元素增加属性节点
+            </p>
+            <p>
+                ​ element.setAttribute( attributeName, attributeValue );给元素增加指定属性，并设定属性值
+            </p>
+
+        </section>
+
+        <section>
+            <p>
+                创建节点
+            </p>
+            <p>
+                document.createElement('元素名'); 创建新的元素节点
+            </p>
+            <p>
+                ​document.createAttribute('属性名'); 创建新的属性节点
+            </p>
+            <p>
+                ​ document.createTextNode('文本内容'); 创建新的文本节点
+            </p>
+            <p>
+                document.createComment('注释节点'); 创建新的注释节点
+            </p>
+            <p>
+                document.createDocumentFragment( ); 创建文档片段节点
+            </p>
+        </section>
+        <section>
+            <p>
+                删除节点
+            </p>
+            <p>
+                parentNode.removeChild( existingChild );删除已有的子节点，返回值为删除节点
+            </p>
+            <p>
+                ​ element.removeAttribute('属性名');删除具有指定属性名称的属性，无返回值
+            </p>
+            <p>
+                ​ element.removeAttributeNode( attrNode );删除指定属性，返回值为删除的属性
+            </p>
+        </section>
+
+        <section>
+            <p>
+                修改节点
+            </p>
+            <p>
+                parentNode.replaceChild( newChild, existingChild );用新节点替换父节点中已有的子节点
+
+            </p>
+            <p>
+                ​ element.setAttributeNode( attributeName );若原元素已有该节点，此操作能达到修改该属性值的目的
+
+            </p>
+            <p>
+                ​ element.setAttribute( attributeName, attributeValue );若原元素已有该节点，此操作能达到修改该属性值的目的
+            </p>
+
+        </section>
+
+        <section>
+            <h4>结束语</h4>
+            <p>今天的分享就到这里啦，感谢大家观看</p>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://ptteng.github.io/PPT/lib/reveal/js/head.min.js"></script>
+<script src="https://ptteng.github.io/PPT/lib/reveal/reveal.js"></script>
+
+<script>
+    // 以下为常见配置属性的默认值
+    // {
+    // controls: true, // 是否在右下角展示控制条
+    // progress: true, // 是否显示演示的进度条
+    // slideNumber: false, // 是否显示当前幻灯片的页数编号，也可以使用代码slideNumber: 'c / t' ，表示当前页/总页数。
+    // history: false, // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+    // keyboard: true, // 是否启用键盘快捷键来导航
+    // overview: true, // 是否启用幻灯片的概览模式，可使用"Esc"或"o"键来切换概览模式
+    // center: true, // 是否将幻灯片垂直居中
+    // touch: true, // 是否在触屏设备上启用触摸滑动切换
+    // loop: false, // 是否循环演示
+    // rtl: false, // 是否将演示的方向变成RTL，即从右往左
+    // fragments: true, // 全局开启和关闭碎片。
+    // autoSlide: 0, // 两个幻灯片之间自动切换的时间间隔（毫秒），当设置成 0 的时候则禁止自动切换，该值可以被幻灯片上的 ` data-autoslide` 属性覆盖
+    // transition: 'default', // 切换过渡效果，有none/fade/slide/convex/concave/zoom
+    // transitionSpeed: 'default', // 过渡速度，default/fast/slow
+    // mouseWheel: true, //是否启用通过鼠标滚轮来切换幻灯片
+    // }
+    // 初始化幻灯片
+    Reveal.initialize({
+        history: true,
+        dependencies: [
+            {src: 'https://ptteng.github.io/PPT/plugin/markdown/marked.js'},
+            {src: 'https://ptteng.github.io/PPT/plugin/markdown/markdown.js'},
+            {src: 'https://ptteng.github.io/PPT/plugin/notes/notes.js', async: true},
+            {
+                src: 'https://ptteng.github.io/PPT/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
